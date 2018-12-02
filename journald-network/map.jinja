@@ -1,0 +1,13 @@
+{# vi: set ft=jinja: #}
+
+{# merge overrides #}
+{% set lookup_remote = salt['pillar.get']('journald_remote:lookup', default={}, merge=True) %}
+
+{# merge all #}
+{% set journald_remote = salt['pillar.get']('journald_remote', default=lookup_remote, merge=True) %}
+
+{# merge overrides #}
+{% set lookup_upload = salt['pillar.get']('journald_upload:lookup', default={}, merge=True) %}
+
+{# merge all #}
+{% set journald_upload = salt['pillar.get']('journald_upload', default=lookup_upload, merge=True) %}

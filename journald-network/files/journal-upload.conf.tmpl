@@ -1,0 +1,17 @@
+{# vi: set ft=jinja: #}
+# File managed by Salt at <{{ source }}>.
+# Your changes will be overwritten.
+
+[Upload]
+{% if url is defined -%}
+URL={{ url }}
+{% endif -%}
+{% if key is defined -%}
+ServerKeyFile={{ key }}
+{% endif -%}
+{% if cert is defined -%}
+ServerCertificateFile={{ cert }}
+{% endif -%}
+{% if ca is defined -%}
+TrustedCertificateFile={{ ca }}
+{% endif -%}

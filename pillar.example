@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+journald_remote:
+  ca: /srv/certs/ca.pem
+  cert: /srv/certs/example-cert.pem
+  key: /srv/certs/example-key.pem
+journald_upload:
+  url: example.com
+  ca: /srv/certs/ca.pem
+  cert: /srv/certs/example-cert.pem
+  key: /srv/certs/example-key.pem

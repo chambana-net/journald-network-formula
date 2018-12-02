@@ -1,0 +1,20 @@
+{# vi: set ft=jinja: #}
+# File managed by Salt at <{{ source }}>.
+# Your changes will be overwritten.
+
+[Remote]
+{% if seal is defined -%}
+Seal={{ seal }}
+{% endif -%}
+{% if split_mode is defined -%}
+SplitMode={{ split_mode }}
+{% endif -%}
+{% if key is defined -%}
+ServerKeyFile={{ key }}
+{% endif -%}
+{% if cert is defined -%}
+ServerCertificateFile={{ cert }}
+{% endif -%}
+{% if ca is defined -%}
+TrustedCertificateFile={{ ca }}
+{% endif -%}

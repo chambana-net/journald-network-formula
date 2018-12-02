@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+# vim: ft=sls
+
+{% from "journald_network/map.jinja" import journald_upload with context %}
+
+journald_upload:
+  file.managed:
+    - name: /etc/systemd/journal-upload.conf
+    - source: salt://journald_remote/files/journal-upload.conf.tmpl
+    - user: root
+    - group: root
+    - mode: 644
+    - template: jinja
+    - context:
+        url: {{ journald_upload.url }}
+        key: {{ journald_upload.key }}
+        cert: {{ journald_upload.cert }}
+        ca: {{ journald_upload.ca }}
+  service.running:
+    - name: systemd-journald-upload.service
+    - enable: true
+    - onchanges:
+      - file: journald_upload
+    - require:
+      - file: journald_upload
