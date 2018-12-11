@@ -6,7 +6,7 @@
 journald_remote:
   file.managed:
     - name: /etc/systemd/journal-remote.conf
-    - source: salt://journald_remote/files/journal-remote.conf.tmpl
+    - source: salt://journald-remote/files/journal-remote.conf.tmpl
     - user: root
     - group: root
     - mode: 644
