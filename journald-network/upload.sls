@@ -6,7 +6,7 @@
 journald_upload:
   file.managed:
     - name: /etc/systemd/journal-upload.conf
-    - source: salt://journald-remote/files/journal-upload.conf.tmpl
+    - source: salt://journald-network/files/journal-upload.conf.tmpl
     - user: root
     - group: root
     - mode: 644
