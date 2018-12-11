@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # vim: ft=sls
 
-{% from "journald_network/map.jinja" import journald_upload with context %}
+{% from "journald-network/map.jinja" import journald_upload with context %}
 
 journald_upload:
   file.managed:
