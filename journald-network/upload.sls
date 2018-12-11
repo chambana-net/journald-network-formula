@@ -3,6 +3,15 @@
 
 {% from "journald-network/map.jinja" import journald_upload with context %}
 
+{% if grains['os'] == 'Debian'%}
+journald_remote_pkg:
+  pkg.installed:
+    - pkgs:
+      - systemd-journal-remote
+    - require_in:
+      - service: journald_upload
+{% endif %}
+
 journald_upload:
   file.managed:
     - name: /etc/systemd/journal-upload.conf
