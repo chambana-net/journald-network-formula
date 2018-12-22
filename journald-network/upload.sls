@@ -26,7 +26,7 @@ journald_upload:
         cert: {{ journald_upload.cert }}
         ca: {{ journald_upload.ca }}
   service.running:
-    - name: systemd-journald-upload.service
+    - name: systemd-journal-upload.service
     - enable: true
     - onchanges:
       - file: journald_upload
