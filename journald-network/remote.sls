@@ -18,7 +18,7 @@ journald_remote:
         cert: {{ journald_remote.cert }}
         ca: {{ journald_remote.ca }}
   service.running:
-    - name: systemd-journald-remote.service
+    - name: systemd-journal-remote.service
     - enable: true
     - onchanges:
       - file: journald_remote
@@ -27,7 +27,7 @@ journald_remote:
 
 journald_remote_socket:
   service.running:
-    - name: systemd-journald-remote.socket
+    - name: systemd-journal-remote.socket
     - enable: true
     - require:
       - file: journald_remote
